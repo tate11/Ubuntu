@@ -1,0 +1,18 @@
+PostgreSQL pgAdmin
+------------
+
+## Varsayilan sifresiz "postgres" kullanicisina sifre atanir. (pgAdmin'den baglanabilmek icin)
+
+ $ sudo -u postgres psql
+ $ \password
+
+Keyfi kodlar
+-------------
+
+## kullanici olusturma
+
+ $ sudo -u postgres createuser "kullanici" -d -P
+
+## database olusturma
+ 
+ $ createdb administrator

@@ -1,10 +1,20 @@
 PostgreSQL pgAdmin
 ------------
 
-## Varsayilan sifresiz "postgres" kullanicisina sifre atanir. (pgAdmin'den baglanabilmek icin)
+ # Varsayilan sifresiz "postgres" kullanicisina sifre atanir. (pgAdmin'den baglanabilmek icin)
 
+ # Terminalden postgres kullanicisi ile postgresql acilir.
  $ sudo -u postgres psql
+ 
+ # Sifre atanir.
  $ \password
+ 
+ # Eger odoo(localhost:8069) hata veriyorsa(Internal Server Error), gecici olarak bir Database yaratılır.
+ $ createdb "db_isim"
+ 
+ # Daha sonra odoo acilir. Ancak olusturulan Database ile calistirilamaz. Odoo icinden yeni database olusturulmalidir.
+ # "db_isim", PgAdmin'den silinir.
+ 
 
 Keyfi kodlar
 -------------
@@ -12,7 +22,3 @@ Keyfi kodlar
 ## kullanici olusturma
 
  $ sudo -u postgres createuser "kullanici" -d -P
-
-## database olusturma
- 
- $ createdb administrator

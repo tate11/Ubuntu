@@ -9,12 +9,9 @@ PostgreSQL pgAdmin
 # Sifre atanir.
  $ \password
  
-# Eger odoo(localhost:8069) hata veriyorsa(Internal Server Error), gecici olarak bir Database yaratılır.
- $ exit
- $ createdb "db_isim"
- 
-# Daha sonra odoo acilir. Ancak olusturulan Database ile calistirilamaz. Odoo icinden yeni database olusturulmalidir.
-# "db_isim", PgAdmin'den silinir.
+# Eger odoo acilmiyorsa
+ parameters: -d "DB NAME" -i base
+ localhost:8069/web/login  -> id=admin  pw=admin
  
 
 Keyfi kodlar
@@ -23,3 +20,7 @@ Keyfi kodlar
 ## kullanici olusturma
 
  $ sudo -u postgres createuser "kullanici" -d -P
+
+## Database yaratma
+ 
+ $ createdb "DB NAME"

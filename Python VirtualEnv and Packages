@@ -28,4 +28,4 @@ pip install virtualenv
 cd <virtualenv yaratilacak klasor>
 virtualenv -p python<versiyon {3, 3.7}> <isim>
 source <isim>/bin/activate
-pip<versiyon {3.7, 3}> install <paketler>
+pip<versiyon {3.7, 3}> install <paketler>  veya  pip<versiyon {3.7, 3}> install -r requirements.txt

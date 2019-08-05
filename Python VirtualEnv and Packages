@@ -1,0 +1,31 @@
+Python Package Updates
+-----------------------
+
+Requirements
+-------------
+
+sudo apt-get install python3-setuptools   |  Bunlardan emin değilim.  
+sudo apt-get install python3-distutils    |  Ama yüklemekte zarar yok.
+sudo apt-get install python3-pip
+sudo apt-get install python3.6-dev
+sudo apt-get install python3.7-dev
+sudo apt install libgirepository1.0-dev
+sudo apt-get install libpq-dev python-dev libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev libffi-dev libcups2-dev libcairo2-dev
+
+Packages
+---------
+
+sudo python3.7 -m pip install --ignore-installed asn1crypto certifi cffi chardet cryptography defer distro-info httplib2 idna keyring keyrings.alt launchpadlib lazr.restfulclient lazr.uri louis macaroonbakery Mako MarkupSafe netifaces oauth olefile pexpect Pillow pip protobuf pycparser pycrypto pymacaroons PyNaCl pyRFC3339 python-dateutil python-debian pytz pyxdg PyYAML reportlab requests requests-unixsocket SecretStorage setuptools simplejson six urllib3 wadllib wheel zope.interface pycairo pycups pygobject --no-cache-dir
+sudo python3 -m pip install --ignore-installed asn1crypto certifi cffi chardet cryptography defer distro-info httplib2 idna keyring keyrings.alt launchpadlib lazr.restfulclient lazr.uri louis macaroonbakery Mako MarkupSafe netifaces oauth olefile pexpect Pillow pip protobuf pycparser pycrypto pymacaroons PyNaCl pyRFC3339 python-dateutil python-debian pytz pyxdg PyYAML reportlab requests requests-unixsocket SecretStorage setuptools simplejson six urllib3 wadllib wheel zope.interface pycairo pycups pygobject --no-cache-dir
+&
+sudo python3.7 -m pip install --upgrade asn1crypto certifi cffi chardet cryptography defer distro-info httplib2 idna keyring keyrings.alt launchpadlib lazr.restfulclient lazr.uri louis macaroonbakery Mako MarkupSafe netifaces oauth olefile pexpect Pillow pip protobuf pycparser pycrypto pymacaroons PyNaCl pyRFC3339 python-dateutil python-debian pytz pyxdg PyYAML reportlab requests requests-unixsocket SecretStorage setuptools simplejson six urllib3 wadllib wheel zope.interface pycairo pycups pygobject --no-cache-dir
+sudo python3 -m pip install --upgrade asn1crypto certifi cffi chardet cryptography defer distro-info httplib2 idna keyring keyrings.alt launchpadlib lazr.restfulclient lazr.uri louis macaroonbakery Mako MarkupSafe netifaces oauth olefile pexpect Pillow pip protobuf pycparser pycrypto pymacaroons PyNaCl pyRFC3339 python-dateutil python-debian pytz pyxdg PyYAML reportlab requests requests-unixsocket SecretStorage setuptools simplejson six urllib3 wadllib wheel zope.interface pycairo pycups pygobject --no-cache-dir
+
+VirtualEnv
+-----------
+
+pip install virtualenv
+cd <virtualenv yaratilacak klasor>
+virtualenv -p python<versiyon {3, 3.7}> <isim>
+source <isim>/bin/activate
+pip<versiyon {3.7, 3}> install <paketler>

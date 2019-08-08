@@ -45,7 +45,7 @@ sudo -u postgres psql    (Database "postgres" not found derse  $ createdb postgr
 Enter new password: postgres
 Enter it again: postgres
 exit
-sudo -u postgres administrator     (Database "administrator" not found derse  $ createdb administrator)
+sudo -u administrator psql     (Database "administrator" not found derse  $ createdb administrator)
 \password
 Enter new password: 82. Satıra girilecek şifre
 Enter it again: 82. Satıra girilecek şifre

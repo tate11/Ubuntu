@@ -63,7 +63,7 @@ cd /opt/odoo12
 virtualenv -p python3.7 odoo-venv
 source odoo-venv/bin/activate
 pip3.7 install wheel
-pip3.7 install -r Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycopg2 pydot pyldap pyparsingPyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd pypiwin32
+pip3.7 install Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycopg2 pydot pyldap pyparsing PyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
 deactivate
 
 ## Odoo default konfigürasyon dosyası, gerekli yere alınıp düzenlenir.

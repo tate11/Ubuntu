@@ -1,0 +1,124 @@
+#### Satır satır yapıştıralım. ####
+
+## Adettendir ilk önce update yapılır.
+ 
+sudo apt-get update && sudo apt-get upgrade
+
+## Python 3.7 ve Odoo için gereksinimleri yüklenir.
+
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.7 python3-venv python3.7-venv
+
+## Pycharm yüklenir. Ve tam olarak yetkilendirilir. (Ne kadar gerekli bilmiyorum.)
+
+sudo snap install pycharm-community --classic
+sudo chmod -R 777 /snap/pycharm-community
+
+## Odoo gereksinimleri yüklenir.
+
+sudo apt install git python3-pip build-essential wget python3-dev python3.7-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less
+wget https://builds.wkhtmltopdf.org/0.12.1.3/wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+sudo apt install ./wkhtmltox_0.12.1.3-1~bionic_amd64.deb
+
+## Odoo yüklemek için klasör açılır ve tam yetki verilir.
+
+sudo mkdir /opt/odoo12
+sudo mkdir /opt/odoo12/custom-addons
+sudo chmod -R 777 /opt/odoo12
+
+## PostgreSQL kurulur. (İlk 3 satır gizemini korumakta.)
+
+sudo apt-get install wget ca-certificates 
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+## PostgreSQL için kullanıcı yaratılır. (Yetkili sistem kullanıcı isminin aynısı olsun.)
+
+sudo su - postgres -c "createuser -s administrator"
+
+## PostgreSQL default kullanıcı olan "postgres"e ve bizim kullanıcımız "administrator"e şifre atanır. (Default olarak atanmıyor.)
+
+sudo -u postgres psql    (Database "postgres" not found derse  $ createdb postgres)
+\password
+Enter new password: postgres
+Enter it again: postgres
+exit
+sudo -u postgres administrator     (Database "administrator" not found derse  $ createdb administrator)
+\password
+Enter new password: 82. Satıra girilecek şifre
+Enter it again: 82. Satıra girilecek şifre
+exit
+
+## Odoo 12, GitHub'tan indirilir.
+
+git clone https://github.com/odoo/odoo --depth 1 --branch 12.0 /opt/odoo12/odoo
+
+## Python 3.7 Virtual Environment hazırlanır.
+
+cd /opt/odoo12
+virtualenv -p python3.7 odoo-venv
+source odoo-venv/bin/activate
+pip3.7 install wheel
+pip3.7 install -r Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycopg2 pydot pyldap pyparsingPyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd pypiwin32
+deactivate
+
+## Odoo default konfigürasyon dosyası, gerekli yere alınıp düzenlenir.
+
+sudo cp /opt/odoo12/odoo/debian/odoo.conf /etc/odoo12.conf
+sudo gedit /etc/odoo12.conf
+
+## Aşağıdaki kısım açılan dosyanın içindekiler silinerek yapıştırılır. Ayarlamalardan sonra save edilir.
+
+[options]
+; This is the password that allows database operations:
+admin_passwd = <Buraya odoo için master password yazıyoruz>
+db_host = localhost
+db_port = 5432
+db_user = administrator
+db_password = 52. Satırdaki şifre
+addons_path = /opt/odoo12/odoo/addons,/opt/odoo12/custom-addons
+
+## Pycharm açılır.
+
+pycharm-community
+
+## Open Project seçeneğinden /opt/odoo12 seçilir.
+
+## Projenin indexlenmesi bittiğinde, Sağ üst tarafta "Add Configuration" seçeneği seçilir.
+
+Name: <Keyfe kalmış Odoo 12 yazılabilir>
+Script path: /opt/odoo12/odoo/odoo-bin
+Parameters: -c /etc/odoo12.conf -d <Keyfi DB ismi> -i base         (Tüm parametreler: https://www.odoo.com/documentation/12.0/reference/cmdline.html)
+Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv....) seçilmiş olmalı, seçili değilse ayarlayın.
+
+## Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
+## Bir kez çalıştırdıktan sonra "Run" tuşunun solundan "Edit Configurations"a gelinip "-i base" silinip kaydedilir.
+
+## İnternet tarayıcısından "localhost:8069" açılıp Mail:PW = admin:admin olarak girilir. Demo kullanıcısı için demo:demo
+
+
+
+## PgAdmin 4 Kurulumu
+
+sudo apt-get install pgadmin4 pgadmin4-apache2
+
+## Kurulum sırasında belirteceğiniz mail adresi ve şifreyi düzgün yazın, yanlış yazılırsa çözümü şimdilik bende yok.
+
+## Tarayıcıdan "localhost/pgadmin4" açılır.
+## Add New Server
+## Açılan pencerenin "General" sekmesinde "Name" kısmına keyfi isim yazılır.
+## "Connection" sekmesi
+Host name/address: localhost
+Port: 5432
+Maintenance database: postgres
+Username: postgres
+Password: postgres
+Save Password=: True
+Role: <Boş>
+Service: <Boş>
+
+## İŞLEM TAMAM ##

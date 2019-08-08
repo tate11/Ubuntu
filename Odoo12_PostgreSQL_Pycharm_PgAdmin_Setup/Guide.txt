@@ -47,7 +47,7 @@ sudo -u postgres psql    (Database "postgres" not found derse  $ createdb postgr
 Enter new password: postgres
 Enter it again: postgres
 exit
-sudo -u postgres administrator
+sudo -u postgres administrator     (Database "administrator" not found derse  $ createdb administrator)
 \password
 Enter new password: 82. Satıra girilecek şifre
 Enter it again: 82. Satıra girilecek şifre
@@ -92,10 +92,33 @@ pycharm-community
 
 Name: <Keyfe kalmış Odoo 12 yazılabilir>
 Script path: /opt/odoo12/odoo/odoo-bin
-Parameters: -c /etc/odoo12.conf          (Tüm parametreler: https://www.odoo.com/documentation/12.0/reference/cmdline.html)
+Parameters: -c /etc/odoo12.conf -d <Keyfi DB ismi> -i base         (Tüm parametreler: https://www.odoo.com/documentation/12.0/reference/cmdline.html)
 Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv....) seçilmiş olmalı, seçili değilse ayarlayın.
 
+## Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
+## Bir kez çalıştırdıktan sonra "Run" tuşunun solundan "Edit Configurations"a gelinip "-i base" silinip kaydedilir.
+
+## İnternet tarayıcısından "localhost:8069" açılıp Mail:PW = admin:admin olarak girilir. Demo kullanıcısı için demo:demo
 
 
 
+## PgAdmin 4 Kurulumu
 
+sudo apt-get install pgadmin4 pgadmin4-apache2
+
+## Kurulum sırasında belirteceğiniz mail adresi ve şifreyi düzgün yazın, yanlış yazılırsa çözümü şimdilik bende yok.
+
+## Tarayıcıdan "localhost/pgadmin4" açılır.
+## Add New Server
+## Açılan pencerenin "General" sekmesinde "Name" kısmına keyfi isim yazılır.
+## "Connection" sekmesi
+Host name/address: localhost
+Port: 5432
+Maintenance database: postgres
+Username: postgres
+Password: postgres
+Save Password=: True
+Role: <Boş>
+Service: <Boş>
+
+## İŞLEM TAMAM ##

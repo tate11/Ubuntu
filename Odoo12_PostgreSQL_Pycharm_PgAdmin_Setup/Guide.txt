@@ -47,6 +47,12 @@ Enter new password: postgres
 Enter it again: postgres
 exit
 
+sudo -u administrator psql          (psql: FATAL:  database "administrator" does not exist derse -->> $ createdb administrator)
+\password
+Enter new password: <81. Satırda kullanılacak şifre belirleyin>
+Enter it again: <81. Satırda kullanılacak şifre belirleyin>
+exit
+
 ## Odoo 12, GitHub'tan indirilir.
 
 git clone https://github.com/odoo/odoo --depth 1 --branch 12.0 /opt/odoo12/odoo
@@ -72,8 +78,8 @@ admin_passwd = <Buraya odoo için master password yazıyoruz>
 db_host = localhost
 db_port = 5432
 db_user = administrator
-db_password = False
-addons_path = /opt/odoo12/odoo/addons,/opt/odoo12/custom-addons
+db_password = <52. satırdaki şifre>
+addons_path = /opt/odoo12/custom-addons
 
 ## Pycharm açılır.
 

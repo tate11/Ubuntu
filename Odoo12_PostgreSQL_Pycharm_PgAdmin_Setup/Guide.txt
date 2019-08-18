@@ -17,8 +17,9 @@ sudo snap install pycharm-community --classic
 sudo chmod -R 777 /snap/pycharm-community
 
 ## Odoo gereksinimleri yüklenir.
+sudo apt-get install  
 
-sudo apt install git virtualenv python3-pip build-essential wget python3-dev python3.7-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less wkhtmltopdf
+sudo apt install git virtualenv python3-pip libpq-dev python-dev libxml2-dev libxslt1-dev libffi-dev libcups2-dev libcairo2-dev build-essential wget libgirepository1.0-dev python3-dev python3.7-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less wkhtmltopdf
 
 ## Odoo yüklemek için klasör açılır ve tam yetki verilir.
 
@@ -55,7 +56,6 @@ git clone https://github.com/odoo/odoo --depth 1 --branch 12.0 /opt/odoo12/odoo
 cd /opt/odoo12
 virtualenv -p python3.7 odoo-venv
 source odoo-venv/bin/activate
-pip3.7 install wheel
 pip3.7 install Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycopg2 pydot pyldap pyparsing PyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
 deactivate
 

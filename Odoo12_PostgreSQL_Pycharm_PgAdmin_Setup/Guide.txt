@@ -40,15 +40,10 @@ sudo su - postgres -c "createuser -s administrator"
 
 ## PostgreSQL default kullanıcı olan "postgres"e ve bizim kullanıcımız "administrator"e şifre atanır. (Default olarak atanmıyor.)
 
-sudo -u postgres psql    (Database "postgres" not found derse  $ createdb postgres)
+sudo -u postgres psql
 \password
 Enter new password: postgres
 Enter it again: postgres
-exit
-sudo -u administrator psql     (Database "administrator" not found derse  $ createdb administrator)
-\password
-Enter new password: 82. Satıra girilecek şifre
-Enter it again: 82. Satıra girilecek şifre
 exit
 
 ## Odoo 12, GitHub'tan indirilir.

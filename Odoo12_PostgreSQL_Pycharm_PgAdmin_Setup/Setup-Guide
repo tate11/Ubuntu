@@ -83,7 +83,7 @@ admin_passwd = <Buraya odoo için Master Password yazıyoruz>
 db_host = localhost
 db_port = 5432
 db_user = administrator
-db_password = <52. satırdaki şifre>
+db_password = <56. satırdaki şifre>
 addons_path = /opt/odoo12/custom-addons
 
 ## Pycharm açılır.
@@ -124,3 +124,4 @@ Role: <Boş>
 Service: <Boş>
 
 ## İŞLEM TAMAM ##
+

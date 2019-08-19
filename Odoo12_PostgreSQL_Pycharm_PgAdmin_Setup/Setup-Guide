@@ -47,11 +47,16 @@ Enter new password: postgres
 Enter it again: postgres
 exit
 
-sudo -u administrator psql          (psql: FATAL:  database "administrator" does not exist derse -->> $ createdb administrator)
+sudo -u administrator psql
+
+  ##psql: FATAL:  database "administrator" does not exist diyecek.
+createdb administrator
+  
 \password
-Enter new password: <81. Satırda kullanılacak şifre belirleyin>
-Enter it again: <81. Satırda kullanılacak şifre belirleyin>
+Enter new password: <86. Satırda kullanılacak şifre belirleyin>
+Enter it again: <86. Satırda kullanılacak şifre belirleyin>
 exit
+dropdb administrator    (Bunu yapmazsak Odoo, administrator database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verecek)
 
 ## Odoo 12, GitHub'tan indirilir.
 
@@ -74,7 +79,7 @@ sudo gedit /etc/odoo12.conf
 
 [options]
 ; This is the password that allows database operations:
-admin_passwd = <Buraya odoo için master password yazıyoruz>
+admin_passwd = <Buraya odoo için Master Password yazıyoruz>
 db_host = localhost
 db_port = 5432
 db_user = administrator
@@ -87,18 +92,16 @@ pycharm-community
 
 ## Open Project seçeneğinden /opt/odoo12 seçilir.
 
-## Projenin indexlenmesi bittiğinde, Sağ üst tarafta "Add Configuration" açılan pencereden sol üstte "+" seçeneği seçilir.
+## Projenin indexlenmesi bittiğinde, Sağ üst tarafta "Add Configuration" açılan pencereden sol üstte "+" seçeneğinden "Python" seçilir.
 
 Name: <Keyfe kalmış Odoo 12 yazılabilir>
 Script path: /opt/odoo12/odoo/odoo-bin
-Parameters: -c /etc/odoo12.conf -d <Keyfi DB ismi> -i base         (Tüm parametreler: https://www.odoo.com/documentation/12.0/reference/cmdline.html)
+Parameters: -c /etc/odoo12.conf        (Tüm parametreler: https://www.odoo.com/documentation/12.0/reference/cmdline.html)
 Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv....) seçilmiş olmalı, seçili değilse ayarlayın.
 
 ## Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
-## Bir kez çalıştırdıktan sonra "Run" tuşunun solundan "Edit Configurations"a gelinip "-i base" silinip kaydedilir.
 
 ## İnternet tarayıcısından "localhost:8069" açılıp Mail:PW = admin:admin olarak girilir. Demo kullanıcısı için demo:demo
-
 
 
 ## PgAdmin 4 Kurulumu

@@ -1,0 +1,7 @@
+@api.multi
+def name_get(self):
+    result = []
+    for record in self:
+        name = str(record.ip_address) + ', ' + record.direction
+        result.append((record.id, name))
+    return result

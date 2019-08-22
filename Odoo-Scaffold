@@ -1,0 +1,6 @@
+Custom Module
+----------------
+
+cd /opt/odoo12
+
+odoo/odoo-bin scaffold <custom modul ismi> custom-addons/

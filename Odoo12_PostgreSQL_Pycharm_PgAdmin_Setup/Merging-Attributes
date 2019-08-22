@@ -2,6 +2,6 @@
 def name_get(self):
     result = []
     for record in self:
-        name = str(record.ip_address) + ', ' + record.direction
+        name = str(record."AAATTTTRRRIBUTEEE1") + ', ' + record."AAATTTTRRRIBUTEEE2"
         result.append((record.id, name))
     return result

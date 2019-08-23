@@ -35,7 +35,7 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 
 ## PostgreSQL için kullanıcı yaratılır. 
-##("administrator" yerine kendi kullanıcı adınızı yazınız, Ex: Terminaldeki yeşil yazıda "@"den önceki kısım.)
+##("administrator" yerine kendi kullanıcı adınızı yazınız; Yani, terminaldeki yeşil yazıda "@"den önceki kısım.)
 
 sudo su - postgres -c "createuser -s administrator"
 

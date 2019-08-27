@@ -35,7 +35,7 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 
 ## PostgreSQL için kullanıcı yaratılır. 
-##(Aşağılardaki tüm "administrator" yerlerine kendi kullanıcı adınızı yazınız; Yani, terminaldeki yeşil yazıda "@"den önceki kısım.)
+#!#!# Aşağılardaki tüm "administrator" yerlerine kendi kullanıcı adınızı yazınız; Yani, terminaldeki yeşil yazıda "@"den önceki kısım. #!#!#
 
 sudo su - postgres -c "createuser -s administrator"
 
@@ -57,7 +57,7 @@ Enter new password: <86. Satırda kullanılacak şifre belirleyin>
 Enter it again: <86. Satırda kullanılacak şifre belirleyin>
 
 exit
-dropdb administrator    (Bunu yapmazsak Odoo, administrator database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verecek)
+dropdb administrator    ##Bunu yapmazsak Odoo, administrator database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verebilir.
 
 ## Odoo 12, GitHub'tan indirilir.
 

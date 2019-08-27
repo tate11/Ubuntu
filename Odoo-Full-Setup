@@ -43,7 +43,7 @@ sudo su - postgres -c "createuser -s administrator"
 
 sudo -u postgres psql
 \password
-Enter new password: postgres
+Enter new password: postgres   ##Buraya istediğiniz bir şey de yazabilirsiniz, en aşağıda pgAdmin kurulurken gerekecek.
 Enter it again: postgres
 exit
 

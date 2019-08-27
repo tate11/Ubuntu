@@ -119,9 +119,31 @@ Host name/address: localhost
 Port: 5432
 Maintenance database: postgres
 Username: postgres
-Password: postgres
+Password: postgres  ## 46. satırdaki koyulan şifre.
 Save Password=: True
 Role: <Boş>
 Service: <Boş>
 
-## İŞLEM TAMAM ##
+
+## DBeaver Kurulumu
+
+sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo apt-get update
+sudo apt-get install dbeaver-ce
+
+## Ubuntunun uygulamalar menüsüne ikon olarak gelmiş olacak. Oradan açın.
+## Açılan pop-up'tan PostgreSql seçin.
+
+Host: localhost
+Database: <Burayı komple silin>
+User: postgres
+Password: postgres  ## 46. satırdaki koyulan şifre.
+## Settings'ten Show all databases seçin.
+
+## Finish dediğinizde veya demeden önce de olabilir, karşınıza bir şey yüklemenizi isteyen bir ekran çıkacak.
+## Download diyin.
+
+## Artık Databaselere soldaki taraftan erişebilirsiniz.
+
+#!#! İŞLEM TAMAM #!#!
+

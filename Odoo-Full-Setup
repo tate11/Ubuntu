@@ -47,14 +47,14 @@ Enter new password: postgres   ##Buraya istediğiniz bir şey de yazabilirsiniz,
 Enter it again: postgres
 exit
 
-sudo -u administrator psql   (##psql: FATAL:  database "administrator" does not exist derse.)
-  
+sudo -u administrator psql   ## Eğer bu koddan sonra psql: FATAL:  database "administrator" does not exist derse 52. satır ile database yaratın.
+## Yoksa 53.den devam.
 createdb administrator
 sudo -u administrator psql
 \password
 
-Enter new password: <86. Satırda kullanılacak şifre belirleyin>
-Enter it again: <86. Satırda kullanılacak şifre belirleyin>
+Enter new password: <87. Satırda kullanılacak şifre belirleyin>
+Enter it again: <87. Satırda kullanılacak şifre belirleyin>
 
 exit
 dropdb administrator    ##Bunu yapmazsak Odoo, administrator database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verebilir.
@@ -71,12 +71,12 @@ source odoo-venv/bin/activate
 pip3.7 install Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycopg2 pydot pyldap pyparsing PyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
 deactivate
 
-## Odoo default konfigürasyon dosyası, gerekli yere alınıp düzenlenir.
+## Odoo default konfigürasyon dosyası, gerekli yere kopyalanır ve düzenlenir.
 
 sudo cp /opt/odoo12/odoo/debian/odoo.conf /etc/odoo12.conf
 sudo gedit /etc/odoo12.conf
 
-## Aşağıdaki kısım açılan dosyanın içindekiler silinerek yapıştırılır. Ayarlamalardan sonra save edilir.
+## Aşağıdaki kısım (81-88.satır) açılan dosyanın içindekiler silinerek yapıştırılır. Ayarlamalardan sonra save edilir.
 
 [options]
 ; This is the password that allows database operations:
@@ -89,9 +89,9 @@ addons_path = /opt/odoo12/custom-addons
 
 ## Pycharm açılır.
 
-pycharm-community
+pycharm-community  ## Veya uygulamalar menüsünden de açılabilir.
 
-## Open Project seçeneğinden /opt/odoo12 seçilir.
+## Open Project seçeneğinden "/opt/odoo12" seçilir.
 
 ## Projenin indexlenmesi bittiğinde, Sağ üst tarafta "Add Configuration" açılan pencereden sol üstte "+" seçeneğinden "Python" seçilir.
 
@@ -102,7 +102,15 @@ Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv...
 
 ## Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
 
-## İnternet tarayıcısından "localhost:8069" açılıp Mail:PW = admin:admin olarak girilir. Demo kullanıcısı için demo:demo
+## İnternet tarayıcısından "localhost:8069" adresinden Odoo açılır. 
+## Database yaratma ekranı gelecek.
+## Master Password kısmına <83. Satır> yazılır.
+## Geri kalan kısımlardan sadece "Mail" ve "Password" kısmı unutulmayacak şekilde yazılmalıdır.
+## Mail adresinin gerçeken mail adresi olmasına gerek yok içinde "@" olmayan bir şey de yazılabilir.
+
+## Odoo kurulumu tamam !
+
+#!#! Demo kullanıcısı ile giriş yapmak için = Mail:demo PW:demo
 
 
 ## PgAdmin 4 Kurulumu

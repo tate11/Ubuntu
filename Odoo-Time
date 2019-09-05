@@ -1,0 +1,25 @@
+from odoo import api, models, fields
+import datetime
+from dateutil import relativedelta
+
+
+class Personnel(models.Model):
+    _inherit = 'hr.employee'
+    _sql_constraints = [
+        ('personnel_sicil_uq',  # Constraint unique identifier
+         'UNIQUE (sicil_no)',  # Constraint SQL syntax
+         'Sicil No must be unique'),  # Message
+    ]
+
+    rank = fields.Char(string='Rank')
+    sicil_no = fields.Char(string='Sicil No')
+
+    start_date = fields.Date(string='Start Date')
+    service_time = fields.Char(compute='_compute_service_time', string='Hizmet Süresi')
+
+    @api.depends('start_date')
+    def _compute_service_time(self):
+        ## İki tarih arası yıl, ay, gün hesaplayan class
+        calisma_suresi = relativedelta.relativedelta(datetime.date.today(), self.start_date)
+        ## Burda da güzel bir hale dönüştürüyoruz
+        self.service_time = str(calisma_suresi.years) + ' year(s) ' + str(calisma_suresi.months) + ' month(s) '+ str(calisma_suresi.days) + ' day(s)'

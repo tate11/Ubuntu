@@ -35,11 +35,10 @@ sudo apt update
 sudo apt install postgresql postgresql-contrib
 
 ## PostgreSQL için kullanıcı yaratılır. 
-#!#!# Aşağılardaki tüm "administrator" yerlerine kendi kullanıcı adınızı yazınız; Yani, terminaldeki yeşil yazıda "@"den önceki kısım. #!#!#
 
-sudo su - postgres -c "createuser -s administrator"
+sudo su - postgres -c "createuser -s $USER"
 
-## PostgreSQL default kullanıcı olan "postgres"e ve bizim kullanıcımız "administrator"e şifre atanır. (Default olarak atanmıyor.)
+## PostgreSQL default kullanıcı olan "postgres"e ve bizim kullanıcımız "$USER"a şifre atanır. (Default olarak atanmıyor.)
 
 sudo -u postgres psql
 \password
@@ -47,17 +46,17 @@ Enter new password: postgres   ##Buraya istediğiniz bir şey de yazabilirsiniz,
 Enter it again: postgres
 exit
 
-sudo -u administrator psql   ## Eğer bu koddan sonra psql: FATAL:  database "administrator" does not exist derse 52. satır ile database yaratın.
+sudo -u $USER psql   ## Eğer bu koddan sonra psql: FATAL:  database "$USER" does not exist derse 52. satır ile database yaratın.
 ## Yoksa 53.den devam.
-createdb administrator
-sudo -u administrator psql
+createdb $USER
+sudo -u $USER psql
 \password
 
-Enter new password: <87. Satırda kullanılacak şifre belirleyin>
-Enter it again: <87. Satırda kullanılacak şifre belirleyin>
+Enter new password: <86. Satırda kullanılacak şifre belirleyin>
+Enter it again: <86. Satırda kullanılacak şifre belirleyin>
 
 exit
-dropdb administrator    ##Bunu yapmazsak Odoo, administrator database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verebilir.
+dropdb $USER    ##Bunu yapmazsak Odoo, $USER database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verebilir.
 
 ## Odoo 12, GitHub'tan indirilir.
 
@@ -68,7 +67,7 @@ git clone https://github.com/odoo/odoo --depth 1 --branch 12.0 /opt/odoo12/odoo
 cd /opt/odoo12
 virtualenv -p python3.7 odoo-venv
 source odoo-venv/bin/activate
-pip3.7 install Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib Pillow psutil psycopg2 pydot pyldap pyparsing PyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
+pip3.7 install Babel chardet decorator docutils ebaysdk feedparser gevent greenlet html2text Jinja2 libsass lxml Mako MarkupSafe mock num2words ofxparse passlib phonenumbers Pillow psutil psycopg2 pydot pyldap pyparsing PyPDF2 pyserial python-dateutil pytz pyusb qrcode reportlab requests suds-jurko vatnumber vobject Werkzeug XlsxWriter xlwt xlrd
 deactivate
 
 ## Odoo default konfigürasyon dosyası, gerekli yere kopyalanır ve düzenlenir.
@@ -80,11 +79,11 @@ sudo gedit /etc/odoo12.conf
 
 [options]
 ; This is the password that allows database operations:
-admin_passwd = <Buraya odoo için Master Password yazıyoruz>
+admin_passwd = <Buraya odoo için Master Password yazıyoruz (Keyfi ama unutmayın.)>
 db_host = localhost
 db_port = 5432
-db_user = administrator
-db_password = <56. satırdaki şifre>
+db_user = <Sistem Kullanıcı Adı'nı yazın: Terminalde yeşil yazıda '@'ten önceki kısım.>
+db_password = <55. satırdaki şifre>
 addons_path = /opt/odoo12/odoo/addons,/opt/odoo12/custom-addons
 
 ## Pycharm açılır.
@@ -103,8 +102,8 @@ Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv...
 ## Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
 
 ## İnternet tarayıcısından "localhost:8069" adresinden Odoo açılır. 
-## Database yaratma ekranı gelecek.
-## Master Password kısmına <83. Satır> yazılır.
+## Database oluşturma ekranı gelecek.
+## Master Password kısmına <82. Satır> yazılır.
 ## Geri kalan kısımlardan sadece "Mail" ve "Password" kısmı unutulmayacak şekilde yazılmalıdır.
 ## Mail adresinin gerçeken mail adresi olmasına gerek yok içinde "@" olmayan bir şey de yazılabilir.
 
@@ -143,7 +142,7 @@ sudo apt-get install dbeaver-ce
 ## Açılan pop-up'tan PostgreSql seçin.
 
 Host: localhost
-Database: <Burayı komple silin>
+Database: <Buraya Database ismini yazaibilirisiniz.>
 User: postgres
 Password: postgres  ## 46. satırdaki koyulan şifre.
 ## Settings'ten Show all databases seçin.

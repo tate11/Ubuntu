@@ -27,7 +27,9 @@ sudo chmod -R 777 /snap/pycharm-community
 
 ### Odoo gereksinimleri yüklenir. (Birkaç ekstra var.)
 
-```sudo apt install git virtualenv python3-pip libpq-dev python-dev libxml2-dev libxslt1-dev libffi-dev libcups2-dev libcairo2-dev build-essential wget libgirepository1.0-dev python3-dev python3.7-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less wkhtmltopdf```
+```
+sudo apt install git virtualenv python3-pip libpq-dev python-dev libxml2-dev libxslt1-dev libffi-dev libcups2-dev libcairo2-dev build-essential wget libgirepository1.0-dev python3-dev python3.7-dev python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less wkhtmltopdf
+```
 
 ### Odoo yüklemek için klasör açılır ve tam yetki verilir.
 

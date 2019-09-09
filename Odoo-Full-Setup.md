@@ -18,7 +18,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.7 python3-venv python3.7-venv
 ```
 
-### Pycharm yüklenir. Ve tam olarak yetkilendirilir. (Ne kadar gerekli bilmiyorum.)
+### Pycharm yüklenir ve tam olarak yetkilendirilir. (Yetkilendirme ne kadar gerekli bilmiyorum.)
 
 ```
 sudo snap install pycharm-community --classic
@@ -188,5 +188,5 @@ Password: postgres  ## PostgreSQL kurulumnda "postgres" kullanıcısına koyduğ
 - Download diyin.
 - Artık Databaselere soldaki taraftan erişebilirsiniz.
 
-#!#! İŞLEM TAMAM #!#!
+### İŞLEM TAMAM !!
 

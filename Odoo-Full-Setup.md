@@ -51,7 +51,9 @@ sudo apt install postgresql postgresql-contrib
 
 ### PostgreSQL için kullanıcı yaratılır. 
 
-```sudo su - postgres -c "createuser -s $USER"```
+```
+sudo su - postgres -c "createuser -s $USER"
+```
 
 ### PostgreSQL default kullanıcı olan "postgres"e ve bizim kullanıcımız "$USER"a şifre atanır. (Default olarak atanmıyor.)
 
@@ -76,7 +78,9 @@ dropdb $USER    ##Bunu yapmazsak Odoo, $USER database'ini uyumlu olmamasına ra�
 ```
 ### Odoo 12, GitHub'tan indirilir.
 
-```git clone https://github.com/odoo/odoo --depth 1 --branch 12.0 /opt/odoo12/odoo```
+```
+git clone https://github.com/odoo/odoo --depth 1 --branch 12.0 /opt/odoo12/odoo
+```
 
 ### Python 3.7 Virtual Environment hazırlanır.
 ```
@@ -106,20 +110,24 @@ addons_path = /opt/odoo12/odoo/addons,/opt/odoo12/custom-addons
 ```
 ### Pycharm açılır.
 
-```pycharm-community  ## Veya uygulamalar menüsünden de açılabilir.```
+```
+pycharm-community  ## Veya uygulamalar menüsünden de açılabilir.
+```
 
 - Open Project seçeneğinden "/opt/odoo12" seçilir.
 
 - Projenin indexlenmesi bittiğinde sol taraftan "odoo" klasörüne sağ tıklanıp "Mark Directory as > Sources Root" seçilir.
 
 - Sağ üst tarafta "Add Configuration" açılan pencereden sol üstte "+" seçeneğinden "Python" seçilir.
+
 ```
 Name: <Keyfe kalmış Odoo 12 yazılabilir>
 Script path: /opt/odoo12/odoo/odoo-bin
 Parameters: -c /etc/odoo12.conf        ##Tüm parametreler: https://www.odoo.com/documentation/12.0/reference/cmdline.html
 Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv....) seçilmiş olmalı, seçili değilse ayarlayın.
 ```
-Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
+
+- Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi.
 
 - İnternet tarayıcısından "localhost:8069" adresinden Odoo açılır. 
 - Database oluşturma ekranı gelecek.
@@ -129,12 +137,14 @@ Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi
 
 ## Odoo kurulumu tamam !
 
-#### Demo kullanıcısı ile giriş yapmak için = Mail:demo PW:demo
+- Demo kullanıcısı ile giriş yapmak için = Mail:demo PW:demo
 
 
 ### PgAdmin 4 Kurulumu
 
-```sudo apt-get install pgadmin4 pgadmin4-apache2```
+```
+sudo apt-get install pgadmin4 pgadmin4-apache2
+```
 
 - Kurulum sırasında belirteceğiniz mail adresi ve şifreyi düzgün yazın, yanlış yazılırsa çözümü şimdilik bende yok.
 
@@ -142,6 +152,7 @@ Artık Odoo 12 sağ üst taraftan çalıştırılıp durdurulabilecek hale geldi
 - Add New Server
 - Açılan pencerenin "General" sekmesinde "Name" kısmına keyfi isim yazılır.
 - "Connection" sekmesi
+
 ```
 Host name/address: localhost
 Port: 5432
@@ -163,12 +174,14 @@ sudo apt-get install dbeaver-ce
 
 - Ubuntunun uygulamalar menüsüne ikon olarak gelmiş olacak. Oradan açın.
 - Açılan pop-up'tan PostgreSql seçin.
+
 ```
 Host: localhost
 Database: <Boş>
 User: postgres
 Password: postgres  ## PostgreSQL kurulumnda "postgres" kullanıcısına koyduğumuz şifreydi.
 ```
+
 - Settings'ten Show all databases seçin. (Bunu seçtiğimizde "postgres" isimli default database focuslanacak. Yani Odoo için SQL komutları yazamayacağız. Focus değiştirmek için sol taraftaki database listesinden uygun database'e sağ tıklayıp "Set Active" diyeceksiniz.)
 
 - Finish dediğinizde veya demeden önce de olabilir, karşınıza bir şey yüklemenizi isteyen bir ekran çıkacak.

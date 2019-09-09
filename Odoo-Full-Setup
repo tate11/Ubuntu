@@ -92,7 +92,9 @@ pycharm-community  ## Veya uygulamalar menüsünden de açılabilir.
 
 ## Open Project seçeneğinden "/opt/odoo12" seçilir.
 
-## Projenin indexlenmesi bittiğinde, Sağ üst tarafta "Add Configuration" açılan pencereden sol üstte "+" seçeneğinden "Python" seçilir.
+## Projenin indexlenmesi bittiğinde sol taraftan "odoo" klasörüne sağ tıklanıp "Mark Directory as > Sources Root" seçilir.
+
+## Sağ üst tarafta "Add Configuration" açılan pencereden sol üstte "+" seçeneğinden "Python" seçilir.
 
 Name: <Keyfe kalmış Odoo 12 yazılabilir>
 Script path: /opt/odoo12/odoo/odoo-bin

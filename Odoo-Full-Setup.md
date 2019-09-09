@@ -131,7 +131,7 @@ Python interpreter: (Otomatik olarak Python 3.7(odoo12) /opt/odoo12/odoo-venv...
 
 - İnternet tarayıcısından "localhost:8069" adresinden Odoo açılır. 
 - Database oluşturma ekranı gelecek.
-- Master Password kısmına <82. Satır> yazılır.
+- Master Password kısmına konfigürasyonda belirlediğiniz şifre yazılır.
 - Geri kalan kısımlardan sadece "Mail" ve "Password" kısmı unutulmayacak şekilde yazılmalıdır.
 - Mail adresinin gerçeken mail adresi olmasına gerek yok içinde "@" olmayan bir şey de yazılabilir.
 

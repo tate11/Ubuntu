@@ -9,7 +9,7 @@ sudo apt-get update $$ sudo apt-get upgrade
 ```
 
 
-### Python 3.7 ve Odoo için gereksinimleri yüklenir.
+### Python 3.7 ve yüklenir. (Birkaçı ekstra)
 
 ```
 sudo apt update

@@ -112,7 +112,7 @@ addons_path = /opt/odoo12/odoo/addons,/opt/odoo12/custom-addons
 ### Pycharm açılır.
 
 ```
-pycharm-community  ## Veya uygulamalar menüsünden de açılabilir.
+pycharm-community  ## Açılan ekranda "Do not import" seçeneğinden devam edin. Plugin yüklemek istediğinde "IdeaVim"i kesinlikle yüklemeyin gerisi farketmez.
 ```
 
 - Open Project seçeneğinden "/opt/odoo12" seçilir.

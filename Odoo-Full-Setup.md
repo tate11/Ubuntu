@@ -60,7 +60,7 @@ sudo su - postgres -c "createuser -s $USER"
 ```
 sudo -u postgres psql
 \password
-Enter new password: postgres   ##Buraya istediğiniz bir şey de yazabilirsiniz, en aşağıda pgAdmin kurulurken gerekecek.
+Enter new password: postgres   ##"postgres" kullanıcısı için verilecek şifre, DBeaver ve PgAdmin için kullanılacak.
 Enter it again: postgres
 exit
 ```
@@ -159,7 +159,7 @@ Host name/address: localhost
 Port: 5432
 Maintenance database: postgres
 Username: postgres
-Password: postgres  ## 46. satırdaki koyulan şifre.
+Password: postgres  ## PostgreSql kurulumunda "postgres" kullanıcısına verilen şifre.
 Save Password=: True
 Role: <Boş>
 Service: <Boş>

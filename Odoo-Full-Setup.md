@@ -97,7 +97,8 @@ sudo cp /opt/odoo12/odoo/debian/odoo.conf /etc/odoo12.conf
 sudo gedit /etc/odoo12.conf
 ```
 
-## Aşağıdaki kısım açılan dosyanın içindekiler silinerek yapıştırılır. Ayarlamalardan sonra save edilir.
+### Aşağıdaki kısım açılan dosyanın içindekiler silinerek yapıştırılır.
+### Ayarlamalardan sonra save edilir.
 ```
 [options]
 ; This is the password that allows database operations:

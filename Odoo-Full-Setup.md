@@ -62,7 +62,7 @@ sudo -u postgres psql
 \password
 Enter new password: postgres   ##"postgres" kullanıcısı için verilecek şifre, DBeaver ve PgAdmin için kullanılacak.
 Enter it again: postgres
-exit
+exit (olmazsa: \q)
 ```
 ```
 sudo -u $USER psql   ## Eğer bu koddan sonra psql: FATAL:  database "$USER" does not exist derse bir aşağıdaki kodla database oluşturun.
@@ -73,7 +73,7 @@ sudo -u $USER psql
 Enter new password: <Odoo konfigürasyon dosyasında "db_password" kısmına yazılacak şifre belirleyin.>
 Enter it again: <Odoo konfigürasyon dosyasında "db_password" kısmına yazılacak şifre belirleyin.>
 
-exit
+exit (olmazsa: \q)
 dropdb $USER    ##Bunu yapmazsak Odoo, $USER database'ini uyumlu olmamasına rağmen açmaya çalışıp hata verebilir.
 ```
 ### Odoo 12, GitHub'tan indirilir.
